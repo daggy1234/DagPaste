@@ -2,6 +2,13 @@
 
 its a cool pastebin idk
 
+## Static
+
+Here are all the static files:
+https://mega.nz/folder/QZ8Clbia#kCmJm3iS4PkwYHuKBRzT5g
+
+
+
 
 ## Run
 
