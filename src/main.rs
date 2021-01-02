@@ -78,11 +78,7 @@ fn index() -> &'static str {
                 get a raw plain tetx response of a paste with no sntax highlighting
             
             GET https://paste.daggy.tech/document/<id>
-                get a Json response with the title for a particular document. 
-            
-        EXAMPLES:
-            - http://localhost:8080/AYqmVk5V7a
-            
+                get a Json response with the title for a particular document.
             "#
 }
 #[get("/robots.txt")]
@@ -151,7 +147,7 @@ fn upload(data: Data) -> Json<Out> {
         .map(|n| n.to_string())
         .unwrap();
     Json(Out {
-        file: format!("http://localhost:8000/{}", rand_string),
+        file: format!("https://paste.daggy.tech/{}", rand_string),
         length: out,
     })
 }
