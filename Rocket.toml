@@ -1,0 +1,6 @@
+[global]
+template_dir = "static"
+limits = { forms = 100000 }
+
+[development]
+log_level = "debug"

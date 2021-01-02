@@ -1,0 +1,35 @@
+# syntax = denzp/cargo-wharf-frontend:v0.1.0-alpha.2
+[package]
+name = "paste"
+version = "0.1.0"
+authors = ["Daggy1234 <arnav.jindal7@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = {version="0.4.6", features=["tls"]}
+rand="0.8.0"
+serde="1.0.117"
+serde_json="1.0.59"
+serde_derive = "1.0"
+rocket_contrib = {version="0.4.6", features = ["tera_templates",  "serve"]}
+rocket_prometheus = "0.7.0"
+
+
+[package.metadata.wharf.builder]
+image = "rustlang/rust:nightly"
+
+[package.metadata.wharf.output]
+image = "gcr.io/distroless/cc-debian10"
+expose = ["8000"]
+entrypoint = ["paste"]
+stop-signal = "SIGINT"
+
+[package.metadata.wharf.output.labels]
+"simple-label" = "simple value"
+"my.awesome.label" = "another value"
+
+[[package.metadata.wharf.binary]]
+name = "paste"
+destination = "/usr/local/bin/paste"
